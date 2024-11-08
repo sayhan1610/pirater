@@ -22,4 +22,3 @@ pirate_exclamations = load_pirate_dictionary("pirate_exclamations.json")
 user_input = input("Enter the text you want to translate to Pirate Speak: ")
 pirate_translation = to_pirate_speak(user_input, pirate_dictionary, pirate_exclamations)
 print("\nPirate Translation:\n" + pirate_translation)
-# test
