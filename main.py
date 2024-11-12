@@ -75,6 +75,11 @@ def translate_text(request: TranslationRequest):
     pirate_translation = to_pirate_speak(request.text, pirate_dictionary, pirate_exclamations)
     return TranslationResponse(pirate_translation=pirate_translation)
 
+
+@app.get("/")
+def ping():
+    return "pong"
+
 if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8000))
