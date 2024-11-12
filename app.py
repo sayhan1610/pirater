@@ -1,16 +1,12 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 import random
 import json
 import string
 import re
-import os
-
 
 def load_pirate_dictionary(filename):
     with open(filename, "r") as file:
         return json.load(file)
-    
+
 def to_pirate_speak(text, pirate_dictionary, pirate_exclamations):
     sentences = re.split(r'(?<=[.!?])\s+(?=(?:(?:[^"]*"){2})*[^"]*$)', text)
     translated_sentences = []
@@ -59,23 +55,6 @@ def to_pirate_speak(text, pirate_dictionary, pirate_exclamations):
 pirate_dictionary = load_pirate_dictionary("pirate_dictionary.json")
 pirate_exclamations = load_pirate_dictionary("pirate_exclamations.json")
 
-app = FastAPI()
-
-class TranslationRequest(BaseModel):
-    text: str
-    
-class TranslationResponse(BaseModel):
-    pirate_translation: str
-    
-@app.post("/translate/", response_model=TranslationResponse)
-def translate_text(request: TranslationRequest):
-    if not request.text.strip():
-        raise HTTPException(status_code=400, detail="Text cannot be empty")
-    
-    pirate_translation = to_pirate_speak(request.text, pirate_dictionary, pirate_exclamations)
-    return TranslationResponse(pirate_translation=pirate_translation)
-
-if __name__ == "__main__":
-    import uvicorn
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
+user_input = input("Enter the text you want to translate to Pirate Speak: ")
+pirate_translation = to_pirate_speak(user_input, pirate_dictionary, pirate_exclamations)
+print("\nPirate Translation:\n" + pirate_translation)
