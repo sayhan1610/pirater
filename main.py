@@ -1,10 +1,12 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import random
 import json
 import string
 import re
 import os
+
 
 
 def load_pirate_dictionary(filename):
@@ -67,6 +69,15 @@ class TranslationRequest(BaseModel):
 class TranslationResponse(BaseModel):
     pirate_translation: str
     
+origins = ["*"]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["*"],
+)
+
 @app.post("/translate/", response_model=TranslationResponse)
 def translate_text(request: TranslationRequest):
     if not request.text.strip():
