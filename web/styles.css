@@ -264,8 +264,35 @@ footer .logo:hover {
   right: 10px;
   width: 50px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: gold;
   border-radius: 50%;
+  transition: transform 0.2s linear; /* Smooth transition back to original state */
+}
+
+#skull-icon:hover {
+  animation: rotateAndEnlarge 0.2s linear forwards;
+}
+
+#skull-icon:not(:hover) {
+  animation: rotateBackAndShrink 0.2s linear forwards;
+}
+
+@keyframes rotateAndEnlarge {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+
+@keyframes rotateBackAndShrink {
+  0% {
+    transform: rotate(360deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
 }
 
 #idle-img,
