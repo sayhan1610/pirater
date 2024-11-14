@@ -2,23 +2,63 @@
 <html>
   <head>
     <title>The Pirate Translator</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <h1>The Pirate Translator</h1>
-    <p>Enter the phrase(s) you'd like translated:</p>
-    <form id="translator-form">
-      <input
-        type="text"
-        id="phrase"
-        name="phrase"
-        placeholder="Enter phrase here"
-        required
-      />
-      <button type="submit">Translate</button>
-    </form>
+  <body class="background">
+    <header>
+      <a href="/"
+        ><img src="static/flag-orpheus-top.svg" alt="Pirate Flag" class="logo"
+      /></a>
+    </header>
 
-    <h2>Translation:</h2>
-    <p id="translation-output"></p>
+    <div class="container">
+      <h1>The Pirate Translator</h1>
+      <p>Enter the phrase(s) you'd like translated:</p>
+      <form id="translator-form">
+        <textarea
+          id="phrase"
+          name="phrase"
+          placeholder="Enter text here"
+          rows="4"
+          required
+        ></textarea>
+        <button type="submit">
+          <img src="static/ship.svg" alt="Pirate Flag" class="logo" /> Translate
+        </button>
+      </form>
+
+      <h2>Translation:</h2>
+      <img
+        id="idle-img"
+        src="static/idle.png"
+        alt="Idle"
+        style="display: none"
+      />
+      <p id="translation-output"></p>
+      <img
+        id="talking-img"
+        src="static/talking.png"
+        alt="Talking"
+        style="display: none"
+      />
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2024 Pirate Translator. All rights reserved | Made for
+        <a href="https://highseas.hackclub.com/">
+          <img src="static/highlogo.png" alt="Pirate Flag" class="logo" />
+        </a>
+      </p>
+      <a href="https://example.com">
+        <img
+          id="skull-icon"
+          src="static/skull.svg"
+          alt="Skull icon"
+          class="skull"
+        />
+      </a>
+    </footer>
 
     <script src="script.js"></script>
   </body>
