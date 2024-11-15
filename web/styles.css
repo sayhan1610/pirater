@@ -409,7 +409,7 @@ footer .logo:hover {
 }
 
 /*Media Queries*/
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .container {
     width: auto;
     min-width: 900px;
