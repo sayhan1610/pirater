@@ -422,6 +422,15 @@ footer .logo:hover {
     margin-left: 20px;
     margin-right: 20px;
   }
+  .container button {
+    font-size: 25px;
+  }
+  .popup {
+    size-adjust: 1.1;
+  }
+  .popup button {
+    font-size: 25px;
+  }
   #idle-img,
   #talking-img,
   #thinking-img {
