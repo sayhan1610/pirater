@@ -208,8 +208,18 @@ button img {
 }
 #translation-output {
   margin-top: 20px;
-  font-size: 1.2em;
+  font-size: 15px;
   font-weight: bold;
+  padding: 15px;
+  border: 2px solid #58aeff;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#translation-output:hover {
+  background-color: #d0e7ff;
 }
 
 footer {
@@ -264,7 +274,7 @@ footer .logo:hover {
   right: 10px;
   width: 50px;
   cursor: pointer;
-  background-color: gold;
+  background: linear-gradient(135deg, #ffd700, #ffb300, #ff8c00);
   border-radius: 50%;
   transition: transform 0.2s linear;
 }
@@ -345,6 +355,8 @@ footer .logo:hover {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #play-audio-btn:hover {
@@ -394,4 +406,41 @@ footer .logo:hover {
 #dismiss-popup-btn {
   background: #f44336;
   color: white;
+}
+
+/*Media Queries*/
+@media (max-width: 768px) {
+  .container {
+    width: auto;
+    min-width: 900px;
+    height: auto;
+    min-width: 900px;
+    max-width: 900px;
+    font-size-adjust: 1.1;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  #idle-img,
+  #talking-img,
+  #thinking-img {
+    max-width: 400px;
+  }
+  .dino-or-party {
+    width: 40px;
+  }
+  footer .logo {
+    width: 70px;
+  }
+  footer {
+    font-size: 20px;
+  }
+  header .logo {
+    width: 200px;
+  }
+  #skull-icon {
+    width: 100px;
+    margin-bottom: 60px;
+  }
 }

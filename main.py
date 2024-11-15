@@ -23,7 +23,7 @@ def to_pirate_speak(text, pirate_dictionary, pirate_exclamations):
         
         words = sentence.split()
         translated_words = []
-        capitalize_next = True
+        capitalize_next = False  
 
         for word in words:
             stripped_word = word.strip(string.punctuation)
@@ -31,9 +31,6 @@ def to_pirate_speak(text, pirate_dictionary, pirate_exclamations):
 
             pirate_translation = pirate_dictionary.get(stripped_word.lower(), stripped_word)
             pirate_word = random.choice(pirate_translation) if isinstance(pirate_translation, list) else pirate_translation
-            
-            if capitalize_next or word[0].isupper():
-                pirate_word = pirate_word.capitalize()
             
             pirate_word += punctuation
             translated_words.append(pirate_word)

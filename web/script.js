@@ -68,17 +68,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const playAudioBtn = document.getElementById("play-audio-btn");
   const dismissPopupBtn = document.getElementById("dismiss-popup-btn");
 
-  // Show the popup on page load
+
   popup.style.display = "flex";
 
-  // Play audio if user agrees
+
   playAudioBtn.addEventListener("click", () => {
     audio.play().catch((err) => console.error("Error playing audio:", err));
     popup.style.display = "none";
   });
 
-  // Dismiss the popup if user declines
+
   dismissPopupBtn.addEventListener("click", () => {
     popup.style.display = "none";
   });
 });
+
+function copyToClipboard() {
+  const translationOutput = document.getElementById('translation-output');
+  
+
+  const range = document.createRange();
+  range.selectNode(translationOutput);
+  window.getSelection().removeAllRanges();  
+  window.getSelection().addRange(range);  
+
+  try {
+
+    document.execCommand('copy');
+    alert("Text copied to clipboard!");
+  } catch (err) {
+    console.error("Failed to copy text", err);
+  }
+
+
+  window.getSelection().removeAllRanges();
+}
+
