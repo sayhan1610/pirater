@@ -10,49 +10,59 @@
         ><img src="static/flag-orpheus-top.svg" alt="Pirate Flag" class="logo"
       /></a>
     </header>
+    <main>
+      <div id="audio-popup" class="popup-overlay">
+        <div class="popup">
+          <p>This website has background audio. Do ye want to play it</p>
+          <p>in th' name o' th' Lord?</p>
+          <button id="play-audio-btn">Aye aye</button>
+          <button id="dismiss-popup-btn">Nayyy</button>
+        </div>
+      </div>
+      <audio id="background-audio" src="static/audio.mp3" loop></audio>
+      <div class="container">
+        <h1>The Pirate Translator</h1>
+        <p>Enter the phrase(s) you'd like translated:</p>
+        <form id="translator-form">
+          <textarea
+            id="phrase"
+            name="phrase"
+            placeholder="Enter text here"
+            rows="4"
+            required
+          ></textarea>
+          <button type="submit">
+            <img src="static/ship.svg" alt="Pirate Flag" class="logo" />
+            Translate
+          </button>
+        </form>
 
-    <div class="container">
-      <h1>The Pirate Translator</h1>
-      <p>Enter the phrase(s) you'd like translated:</p>
-      <form id="translator-form">
-        <textarea
-          id="phrase"
-          name="phrase"
-          placeholder="Enter text here"
-          rows="4"
-          required
-        ></textarea>
-        <button type="submit">
-          <img src="static/ship.svg" alt="Pirate Flag" class="logo" /> Translate
-        </button>
-      </form>
-
-      <h2>Translation:</h2>
-      <img
-        id="idle-img"
-        src="static/idle.png"
-        alt="Idle"
-        style="display: none"
-      />
-      <p id="translation-output"></p>
-      <img
-        id="talking-img"
-        src="static/talking.png"
-        alt="Talking"
-        style="display: none"
-      />
-      <img
-        id="thinking-img"
-        src="static/thinking.png"
-        alt="Thinking"
-        style="display: none"
-      />
-    </div>
-
+        <h2>Translation:</h2>
+        <img
+          id="idle-img"
+          src="static/idle.png"
+          alt="Idle"
+          style="display: none"
+        />
+        <p id="translation-output"></p>
+        <img
+          id="talking-img"
+          src="static/talking.png"
+          alt="Talking"
+          style="display: none"
+        />
+        <img
+          id="thinking-img"
+          src="static/thinking.png"
+          alt="Thinking"
+          style="display: none"
+        />
+      </div>
+    </main>
     <footer>
       <p>
         &copy; 2024 Pirate Translator. All rights reserved | Made for
-        <a href="https://highseas.hackclub.com/">
+        <a href="https://highseas.hackclub.com/?ref=U079F8DLN4X">
           <img src="static/highlogo.png" alt="High Seas Logo" class="logo" />
         </a>
       </p>

@@ -61,3 +61,24 @@ setInterval(() => {
   const randomImg = images[Math.floor(Math.random() * images.length)];
   createAnimatedImage(randomImg);
 }, 30000); 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("audio-popup");
+  const audio = document.getElementById("background-audio");
+  const playAudioBtn = document.getElementById("play-audio-btn");
+  const dismissPopupBtn = document.getElementById("dismiss-popup-btn");
+
+  // Show the popup on page load
+  popup.style.display = "flex";
+
+  // Play audio if user agrees
+  playAudioBtn.addEventListener("click", () => {
+    audio.play().catch((err) => console.error("Error playing audio:", err));
+    popup.style.display = "none";
+  });
+
+  // Dismiss the popup if user declines
+  dismissPopupBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+});
