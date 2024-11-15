@@ -426,9 +426,9 @@ footer .logo:hover {
     font-size: 25px;
   }
   .popup {
-    height: 700px;
+    height: auto;
     width: 800px;
-    font-size: 25px;
+    font-size: 70px;
   }
   .popup button {
     font-size: 25px;
